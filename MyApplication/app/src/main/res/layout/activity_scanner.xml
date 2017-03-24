@@ -1,40 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context="icommons.checklist.scanner"
-    android:weightSum="1"
+    android:weightSum="10"
     android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <SurfaceView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        <SurfaceView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:id="@+id/camera_view"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentRight="true" />
+
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_below="@+id/code_info"
+            android:layout_gravity="center_horizontal|top"
+            android:id="@+id/image_top"
+            android:src="@mipmap/del"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Scan the QRcode here!"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:background="#e4ee22"
+            android:textSize="18dp"
+            android:gravity="center_vertical|center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/ll"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            android:layout_weight="9"
+            android:layout_gravity="right|bottom"
+            android:baselineAligned="false">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Add Manually"
+                android:id="@+id/button"
+                android:layout_weight="1"
+                android:layout_gravity="bottom" />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="4"
+                android:text="On/Off"
+                android:id="@+id/flash"
+                android:layout_gravity="bottom" />
+
+
+
+        </LinearLayout>
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/code_info"
-        android:textSize="25sp"
-        android:text="Classes"
-        android:textStyle="bold"
+        android:textSize="20sp"
+        android:text="Scan the QR code here!"
         android:layout_centerHorizontal="true"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:maxLines="4" />
+        android:maxLines="4"
+        android:allowUndo="false" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Add Manually"
-        android:id="@+id/button"
 
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+    </LinearLayout>
 
-</RelativeLayout>
+
+
+
+
+
+
+
+</LinearLayout>

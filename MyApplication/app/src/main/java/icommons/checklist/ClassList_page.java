@@ -52,7 +52,7 @@ public class ClassList_page extends Activity {
                 String item = ((TextView)view).getText().toString();
 
                 Toast.makeText(getBaseContext(), item, Toast.LENGTH_SHORT).show();
-                if ((((TextView)view).getText().toString()).equalsIgnoreCase("rush009")){
+                if ((((TextView)view).getText().toString()).equalsIgnoreCase("rush 009")){
                     startActivity(new Intent(ClassList_page.this, checklist_page.class));
                 }
             }
